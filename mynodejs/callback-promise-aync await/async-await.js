@@ -1,0 +1,32 @@
+//To do: url1 must be downloaded finish then url2
+const connect = true;
+const url1 = 'donut.com';
+const url2 = 'donut2.com';
+
+function downloading(url) {
+    return new Promise((resolve, reject) => {
+        console.log(`กำลังโหลดจาก ${url}`);
+        setTimeout(() => {
+            if(connect) {
+               resolve(`โหลดจาก ${url} เรียบร้อย`);
+            } else {
+               reject(`เกิดข้อผิดพลาด`);
+            }
+        }, 500);
+    })  
+}
+
+welcome = (text) => {
+    return new Promise( (resolve, reject) => {
+        resolve(text);
+    });
+}
+
+start = async () => {
+    console.log(`เริ่มโปรแกรม`);
+    console.log(await downloading(url1));
+    console.log(await downloading(url2));
+    console.log(`สิ้นสุดโปรแกรม`);
+}
+
+start();
