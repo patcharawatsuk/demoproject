@@ -20,8 +20,10 @@ calculate(100, 50, result => {
     console.log(result);
     calculate(200, 50, result => {
         console.log(result);
-        calculate(500, 500, result => {
+        calculate(500, 500, function(result) {
             console.log(result);
         });
     });
 });
+
+//hell
